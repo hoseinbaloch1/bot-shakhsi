@@ -7,7 +7,7 @@ const {
   FancyRandom,
   getListFromCommand,
   skbuffer
-} = require("raganork-bot");
+} = require("ربات-دستیار");
 const {
   Module,
   commands
@@ -33,107 +33,107 @@ Module({
   var myid = message.client.user.id.split(":")[0]
   var buttons = [{
     urlButton: {
-        displayText: 'Github',
-        url: 'https://github.com/souravkl11/raganork'
+        displayText: 'ادمین',
+        url: 'http://wa.me/989339658384'
     }
 }, {
   urlButton: {
-    displayText: 'Contact Owner',
-    url: 'https://wa.me/'+BOT_INFO.split(";")[2]+'?text=Hey+bro'
+    displayText: 'ادمین اصلی',
+    url: 'http://wa.me/989339658384(";")[2]+'?text=Hey+bro'
     }
 }, {
     quickReplyButton: {
-        displayText: 'Bot status',
-        id: 'ping'+myid
+        displayText: 'نمایش پینگ',
+        id: 'ping'+all
     }
 }, {
     quickReplyButton: {
-        displayText: 'All commands',
-        id: 'commands'+myid
+        displayText:  'همه دستورات',
+        id: 'commands'+all
     }  
 }, {
     quickReplyButton: {
-        displayText: 'Support group',
-        id: 'support'+myid
+        displayText: 'گروه پشتیبانی',
+        id: 'support'+all
     }
 }]
 var gc=commands.filter(a=>"group"===a.use),lgc=commands.filter(a=>"logo"===a.use),tc=commands.filter(a=>"textmaker"===a.use),oc=commands.filter(a=>"owner"===a.use),dc=commands.filter(a=>"download"===a.use),ec=commands.filter(a=>"edit"===a.use),sc=commands.filter(a=>"search"===a.use),uc=commands.filter(a=>"utility"===a.use),setarr=[...gc,...dc,...tc,...oc,...ec,...sc,...uc]
 var gmsg="",ownmsg="",dlmsg="",utilmsg="",srmsg="",tms="",lms="",edmsg="";
 for (var i in setarr) {
-if (setarr[i].use === 'group') {
+if (setarr[i].use === 'گروه') {
   gmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'download') {
+if (setarr[i].use === 'دانلود') {
   dlmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'textmaker') {
+if (setarr[i].use === 'فونت ساز') {
   tms += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'owner') {
+if (setarr[i].use === 'برای ادمین') {
   ownmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'edit') {
+if (setarr[i].use === 'ادیت عکس') {
   edmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'search') {
+if (setarr[i].use === 'جست و جو) {
   srmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
-if (setarr[i].use === 'utility') {
+if (setarr[i].use === 'برای عکس') {
   utilmsg += `┃❉│ ${Math.floor(parseInt(i)+1)}. ${setarr[i].pattern.toString().match(/(\W*)([A-Za-zğüşıiöç1234567890 ]*)/)[2]} \n`
 }
 }
   var menu = `╭═══〘 ${BOT_INFO.split(";")[0]} 〙═══⊷❍
 ┃❉╭──────────────
 ┃❉│
-┃❉│ Owner : ${BOT_INFO.split(";")[1]}
-┃❉│ User : ${message.senderName}
-┃❉│ Mode : ${MODE}
-┃❉│ Server : ${config.HEROKU.APP_NAME}
-┃❉│ Total RAM: ${total}
-┃❉│ Available RAM: ${used}
-┃❉│ Disk Space: 620 GB
-┃❉│ Version: ${config.VERSION}
+┃❉│ نام ربات :دستیار مدیر
+┃❉│ مدیر : حسین
+┃❉│ شماره سازنده : 989339658384
+┃❉│ مشخصات ربات : این ربات برای دستیاری ربات ساخته شده
+┃❉│ حافظه ربات: ${total}
+┃❉│ حافظه مانده: ${used}
+┃❉│  این ربات در حال اپدیت میباشد و در تلاش هستیم ک رباتی ایجاد کنیم ک اسم ایران و ایرانی را بالا ببریم
+┃❉│ آموزش استفاده از این ربات راحت است
 ┃❉│
 ┃❉│
 ┃❉│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
 ┃❉│  ▎▍▌▌▉▏▎▌▉▐▏▌▎
-┃❉│   ${BOT_INFO.split(";")[0]}
+┃❉│   ربات دستیار
 ┃❉│ 
 ┃❉╰───────────────
 ╰═════════════════⊷
 
-╭════〘 Group 〙════⊷❍
+╭════〘 گروه ها 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ${gmsg}
 ┃❉╰─────────────────
 ╰══════════════════⊷❍
-╭════〘 Download 〙════⊷❍
+╭════〘 دانلود ها 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ${dlmsg}
 ┃❉╰─────────────────
 ╰══════════════════⊷❍
-╭════〘 Logo Maker 〙════⊷❍
+╭════〘 لوگو ساز 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ┃❉│ logo
 ${tms}
 ┃❉╰─────────────────
 ╰══════════════════⊷❍
-╭════〘 Owner 〙════⊷❍
+╭════〘 برای مدیر 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ${ownmsg}
 ┃❉╰─────────────────
 ╰══════════════════⊷❍
-╭════〘 Edit 〙════⊷❍
+╭════〘 ادیت 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ${edmsg}
 ┃❉╰─────────────────
 ╰══════════════════⊷❍
-╭════〘 Search 〙════⊷❍
+╭════〘 جست و جو 〙════⊷❍
 ┃❉╭─────────────────
 ┃❉│ 
 ${srmsg}
